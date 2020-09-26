@@ -16,6 +16,19 @@ var express = require('express'),
 app.use(bodypareser.urlencoded({limit:'100mb',extended:true}));
 app.use(bodypareser.json({limit:'100mb'}));
 	
+
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "http://103.252.7.5:4200");
+	res.header("Access-Control-Allow-Methods", "OPTIONS, POST, GET, PUT, DELETE");
+	res.header("Access-Control-Allow-Headers", "*");
+	res.header('Access-Control-Allow-Credentials', true);
+	if ('OPTIONS' == req.method) {
+		return res.sendStatus(200);
+	} else {
+		next();
+	}
+  });
+
 app.use(express.static(path.join(__dirname,'app')));
 
 routes.configure(app);
@@ -23,7 +36,7 @@ routes.configure(app);
 	dbcreation.createDB();
 	dbcreation.CreateTables();
 
-		// console.log(cryptconf.decrypt('b56e182c5da92b5fa3fec2ceedfdd7a7'))
+		// console.log(cryptconf.decrypt('d2cced938df2c0d42d5bfb1a785f76d9'))
 dbBackup.GenerateBackup();
 
 var server = app.listen(parseInt(cryptconf.decrypt(env.port)),function(){
