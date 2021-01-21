@@ -34,7 +34,7 @@
     "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "^2.1.16",
     "read-excel-file": "^4.0.7",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "xlsx": "^0.16.8"
   }
 }
