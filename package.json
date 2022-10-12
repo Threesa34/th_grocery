@@ -33,7 +33,7 @@
     "nodemailer": "^6.4.10",
     "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "^2.1.16",
-    "read-excel-file": "^4.0.7",
+    "read-excel-file": "^5.5.1",
     "socket.io": "^2.3.0",
     "xlsx": "^0.16.8"
   }
